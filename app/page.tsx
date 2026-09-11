@@ -1,46 +1,53 @@
-"use client";
-
-import { useState } from "react";
-
 const articles = [
   { title: "How to Build a Task Manager CLI Tool with Node.js", site: "freeCodeCamp", href: "https://www.freecodecamp.org/news/nodejs-tutorial-build-a-task-manager-cli-tool/" },
   { title: "How to Get Started with NodeJS — a Handbook for Beginners", site: "freeCodeCamp", href: "https://www.freecodecamp.org/news/get-started-with-nodejs/" },
   { title: "Learn Linux Basics", site: "Hashnode", href: "https://krishwebdev.hashnode.dev/learn-linux-basics" },
   { title: "Setting Up Your Tailwind CSS Project", site: "Hashnode", href: "https://krishwebdev.hashnode.dev/setting-up-your-tailwind-css-project" },
 ];
-const palettes = ["clay", "moss", "blue"];
-const external = { target: "_blank", rel: "noreferrer" };
+const external = { target: "_blank", rel: "noopener noreferrer" };
+function Arrow() { return <span className="external-arrow" aria-hidden="true">↗</span>; }
 
 export default function Home() {
-  const [palette, setPalette] = useState(0);
   return (
-    <div className="sheet" data-palette={palettes[palette]}>
+    <div className="site" id="top">
+      <a className="skip-link" href="#main">Skip to content</a>
+      <header className="site-header">
+        <a className="home-link" href="#top">krish<span>.</span></a>
+        <nav aria-label="On this page"><a href="#writing">writing</a><a href="#projects">projects</a><a href="#elsewhere">elsewhere</a></nav>
+      </header>
       <main id="main">
-        <header>
-          <a className="wordmark" href="#main" aria-label="Krish, home">kj<span>.</span></a>
-          <button className="color-button" onClick={() => setPalette((palette + 1) % palettes.length)} aria-label={`Change accent color. Current color: ${palettes[palette]}`} title="A little change of color"><span className="color-dot" /> a little color</button>
-        </header>
-        <section className="intro" aria-labelledby="hello">
-          <p className="eyebrow"><span className="tiny-star" aria-hidden="true">✳</span> A SMALL CORNER OF THE INTERNET</p>
-          <h1 id="hello">Hi, I’m Krish<span className="period">.</span></h1>
-          <p className="intro-copy">I write about things I’m learning<br className="desktop-break" /> and build things along the way.</p>
+        <section className="intro" aria-labelledby="name">
+          <h1 id="name">Krish Jaiswal</h1>
+          <p>Hey, I’m Krish. I build things for the web, tinker with Linux, and write about what I’m learning.</p>
+          <p>You’ll find some of my writing below, a few things I’m working on, and smaller experiments I’ve made for fun.</p>
+          <div className="intro-links"><a href="https://github.com/KrishJ4856" {...external}>GitHub <Arrow /></a><a href="https://twitter.com/Krish4856" {...external}>X / Twitter <Arrow /></a><span className="location">Based in India</span></div>
         </section>
-        <section aria-labelledby="writing-title">
-          <div className="section-heading"><h2 id="writing-title">Some writing</h2><span className="count">NOTES & TUTORIALS</span></div>
-          <ul className="articles">{articles.map(article => <li key={article.href}><a className="article" href={article.href} {...external}><span><span className="article-title">{article.title}</span><span className="article-site">{article.site}</span></span><span className="arrow" aria-hidden="true">↗</span></a></li>)}</ul>
-          <div className="writing-links"><span>More on</span> <a href="https://www.freecodecamp.org/news/author/krish" {...external}>freeCodeCamp ↗</a><span className="separator">&</span><a href="https://krishwebdev.hashnode.dev" {...external}>Hashnode ↗</a></div>
+
+        <section className="section-grid" id="writing" aria-labelledby="writing-title">
+          <h2 id="writing-title">Writing</h2>
+          <div className="section-content">
+            <p className="section-intro">Notes and tutorials from figuring things out.</p>
+            <ul className="article-list">{articles.map(article => <li key={article.href}><a href={article.href} {...external}><span className="article-title">{article.title} <Arrow /></span><span className="article-source">{article.site}</span></a></li>)}</ul>
+            <p className="archive-links">More on <a href="https://www.freecodecamp.org/news/author/krish" {...external}>freeCodeCamp</a> and <a href="https://krishwebdev.hashnode.dev" {...external}>Hashnode</a>.</p>
+          </div>
         </section>
-        <section className="small-section" aria-labelledby="building-title">
-          <h2 id="building-title">Things I’m working on</h2>
-          <ul className="building-list">
-            <li><a href="https://bhajanalarms.com" {...external}>Bhajan Alarms <span aria-hidden="true">↗</span></a><p>Wake up to your favourite bhajans.</p></li>
-            <li><span className="build-name">Doomslog</span><span className="status">in progress</span><p>A Doom-inspired daily journaling app.</p></li>
-            <li><a href="https://github.com/KrishJ4856/piclone" {...external}>piclone <span aria-hidden="true">↗</span></a><span className="status">tinkering now</span></li>
-          </ul>
+
+        <section className="section-grid" id="projects" aria-labelledby="projects-title">
+          <h2 id="projects-title">Projects</h2>
+          <div className="section-content">
+            <p className="section-intro">A few things I’m working on.</p>
+            <dl className="project-list">
+              <div><dt><a href="https://bhajanalarms.com" {...external}>Bhajan Alarms <Arrow /></a></dt><dd>An alarm app to wake up to your favourite bhajans.</dd></div>
+              <div><dt>Doomslog <span className="status">in progress</span></dt><dd>A Doom-inspired daily journaling app.</dd></div>
+              <div><dt><a href="https://github.com/KrishJ4856/piclone" {...external}>piclone <Arrow /></a><span className="status">tinkering now</span></dt></div>
+            </dl>
+            <div className="experiments"><h3>And a few things built for fun</h3><ul><li><a href="https://github.com/KrishJ4856/customdocs" {...external}>CustomDocs</a><span> — AI-generated docs</span></li><li><a href="https://github.com/KrishJ4856/omarchy-linga-bhairavi-theme" {...external}>Linga Bhairavi theme</a><span> — for Omarchy</span></li><li><a href="https://github.com/KrishJ4856/omarchy-linga-bhairavi-stuti" {...external}>Stuti widget</a><span> — for the desktop</span></li></ul></div>
+          </div>
         </section>
-        <section className="small-section fun-section" aria-labelledby="fun-title"><h2 id="fun-title">Built for fun</h2><p className="section-note">A few little vibecoded things.</p><ul className="fun-list"><li><a href="https://github.com/KrishJ4856/customdocs" {...external}>CustomDocs ↗</a><span>AI-generated docs</span></li><li><a href="https://github.com/KrishJ4856/omarchy-linga-bhairavi-theme" {...external}>Linga Bhairavi theme ↗</a><span>a little Omarchy customization</span></li><li><a href="https://github.com/KrishJ4856/omarchy-linga-bhairavi-stuti" {...external}>Stuti widget ↗</a><span>for the desktop</span></li></ul></section>
-        <footer><span>Krish Jaiswal <span className="footer-dot">·</span> India</span><nav aria-label="Social links"><a href="https://github.com/KrishJ4856" {...external}>GitHub ↗</a><a href="https://twitter.com/Krish4856" {...external}>X / Twitter ↗</a></nav><span className="footer-flower" aria-hidden="true">✳</span></footer>
+
+        <section className="section-grid elsewhere" id="elsewhere" aria-labelledby="elsewhere-title"><h2 id="elsewhere-title">Elsewhere</h2><div className="section-content"><p>Find me on <a href="https://github.com/KrishJ4856" {...external}>GitHub <Arrow /></a> or <a href="https://twitter.com/Krish4856" {...external}>X / Twitter <Arrow /></a>.</p></div></section>
       </main>
+      <footer><span>© {new Date().getFullYear()} Krish Jaiswal</span><a href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
     </div>
   );
 }
