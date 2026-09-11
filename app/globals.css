@@ -49,3 +49,12 @@ footer { border-top:1px solid #ddd9cf; padding-top:20px; display:flex; justify-c
 @media(min-width:1400px) { main { padding-top:60px; }.intro { padding-top:80px; } }
 @media(max-width:600px) { main { padding:27px 24px 25px; }.intro { padding:54px 0 42px; }h1 { font-size:54px; letter-spacing:-2.8px; }.eyebrow { font-size:9px; letter-spacing:1px; }.intro-copy { font-size:15px; }.desktop-break { display:none; }.project-kind { display:none; }.project { gap:12px; }.project-note { max-width:250px; }.project-mark { width:36px; height:36px; }.elsewhere { margin:39px 0; }footer { font-size:9px; } }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; }*,*::before,*::after { transition:none!important; } }
+.articles { list-style:none; padding:0; margin:0; }
+.article { display:flex; justify-content:space-between; gap:24px; align-items:center; padding:18px 0; border-bottom:1px solid #e5e1d7; }
+.article-title { display:block; font-size:14px; line-height:1.6; }
+.article-site { display:block; margin-top:5px; color:#8b867b; font:10px monospace; }
+.article:hover .article-title { color:var(--accent); }.article:hover .arrow { transform:translate(2px,-2px); }
+.writing-links { display:flex; flex-wrap:wrap; gap:9px; font-size:11px; color:#817b70; margin-top:17px; }
+.writing-links a { text-decoration:underline; text-underline-offset:4px; text-decoration-color:#ccc7bb; }.writing-links a:hover { color:var(--accent); }
+.small-section { margin-top:43px; }.building-list { list-style:none; padding:0; margin:21px 0 0; }.building-list li { margin:0 0 19px; }.building-list a,.build-name { font-size:13px; }.building-list a:hover { color:var(--accent); }.building-list a span { color:#8b867b; margin-left:3px; }.building-list p { font-size:12px; color:#817b70; margin:7px 0 0; line-height:1.6; }.status { font:9px monospace; color:#918b7e; margin-left:12px; }.section-note { font-size:12px; color:#817b70; margin:12px 0 18px; }.fun-list { list-style:none; padding:0; margin:0; }.fun-list li { display:flex; flex-wrap:wrap; gap:6px 10px; font-size:12px; line-height:1.8; margin:7px 0; }.fun-list li::before { content:'·'; color:#a19a8c; }.fun-list a { color:#696358; }.fun-list a:hover { color:var(--accent); }.fun-list li span { color:#969083; }.fun-section { margin-bottom:46px; }footer nav { font-size:10px; gap:17px; }footer .footer-flower { margin-left:0; }
+@media(max-width:420px) { .count { font-size:8px; letter-spacing:.5px; }footer { flex-wrap:wrap; }footer nav { gap:10px; }.article { gap:15px; } }

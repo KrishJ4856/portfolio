@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 
-const projects = [
-  { name: "CustomDocs", note: "Turn a topic into a set of docs with AI.", repo: "customdocs", mark: "Aa", kind: "web app" },
-  { name: "Linga Bhairavi", note: "A devotional theme and Stuti widget for Omarchy.", repo: "omarchy-linga-bhairavi-theme", mark: "✳", kind: "desktop" },
-  { name: "Task Manager CLI", note: "A little todo list that lives in your terminal.", repo: "task-manager-cli-fcc", mark: ">_", kind: "tool" },
-  { name: "techXcel", note: "Guided roadmaps for learning new tech skills.", repo: "techXcel", mark: "↗", kind: "web app" },
+const articles = [
+  { title: "How to Build a Task Manager CLI Tool with Node.js", site: "freeCodeCamp", href: "https://www.freecodecamp.org/news/nodejs-tutorial-build-a-task-manager-cli-tool/" },
+  { title: "How to Get Started with NodeJS — a Handbook for Beginners", site: "freeCodeCamp", href: "https://www.freecodecamp.org/news/get-started-with-nodejs/" },
+  { title: "Learn Linux Basics", site: "Hashnode", href: "https://krishwebdev.hashnode.dev/learn-linux-basics" },
+  { title: "Setting Up Your Tailwind CSS Project", site: "Hashnode", href: "https://krishwebdev.hashnode.dev/setting-up-your-tailwind-css-project" },
 ];
 const palettes = ["clay", "moss", "blue"];
+const external = { target: "_blank", rel: "noreferrer" };
 
 export default function Home() {
   const [palette, setPalette] = useState(0);
@@ -22,22 +23,23 @@ export default function Home() {
         <section className="intro" aria-labelledby="hello">
           <p className="eyebrow"><span className="tiny-star" aria-hidden="true">✳</span> A SMALL CORNER OF THE INTERNET</p>
           <h1 id="hello">Hi, I’m Krish<span className="period">.</span></h1>
-          <p className="intro-copy">I make things for the web, tinker with my desktop,<br className="desktop-break" /> and learn as I go.</p>
-          <p className="quiet">Some of those things live here.</p>
+          <p className="intro-copy">I write about things I’m learning<br className="desktop-break" /> and build things along the way.</p>
         </section>
-        <section className="work" aria-labelledby="work-title">
-          <div className="section-heading"><h2 id="work-title">A few things I’ve made</h2><span className="count">01 — 04</span></div>
-          <div className="projects">
-            {projects.map((project, index) => <a className="project" key={project.repo} href={`https://github.com/KrishJ4856/${project.repo}`} target="_blank" rel="noreferrer">
-              <span className={`project-mark mark-${index}`} aria-hidden="true">{project.mark}</span>
-              <span className="project-info"><span className="project-name">{project.name}</span><span className="project-note">{project.note}</span></span>
-              <span className="project-kind">{project.kind}</span><span className="arrow" aria-hidden="true">↗</span>
-            </a>)}
-          </div>
-          <a className="all-work" href="https://github.com/KrishJ4856?tab=repositories" target="_blank" rel="noreferrer">More experiments on GitHub <span aria-hidden="true">↗</span></a>
+        <section aria-labelledby="writing-title">
+          <div className="section-heading"><h2 id="writing-title">Some writing</h2><span className="count">NOTES & TUTORIALS</span></div>
+          <ul className="articles">{articles.map(article => <li key={article.href}><a className="article" href={article.href} {...external}><span><span className="article-title">{article.title}</span><span className="article-site">{article.site}</span></span><span className="arrow" aria-hidden="true">↗</span></a></li>)}</ul>
+          <div className="writing-links"><span>More on</span> <a href="https://www.freecodecamp.org/news/author/krish" {...external}>freeCodeCamp ↗</a><span className="separator">&</span><a href="https://krishwebdev.hashnode.dev" {...external}>Hashnode ↗</a></div>
         </section>
-        <section className="elsewhere" aria-labelledby="elsewhere-title"><h2 id="elsewhere-title">Elsewhere</h2><p>I also write about things I’m figuring out.</p><nav aria-label="Find me elsewhere"><a href="https://github.com/KrishJ4856" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a><a href="https://krishwebdev.hashnode.dev" target="_blank" rel="noreferrer">Writing <span aria-hidden="true">↗</span></a><a href="https://twitter.com/Krish4856" target="_blank" rel="noreferrer">X / Twitter <span aria-hidden="true">↗</span></a></nav></section>
-        <footer><span>Krish Jaiswal <span className="footer-dot">·</span> India</span><span>Thanks for stopping by <span className="footer-flower" aria-hidden="true">✳</span></span></footer>
+        <section className="small-section" aria-labelledby="building-title">
+          <h2 id="building-title">Things I’m working on</h2>
+          <ul className="building-list">
+            <li><a href="https://bhajanalarms.com" {...external}>Bhajan Alarms <span aria-hidden="true">↗</span></a><p>Wake up to your favourite bhajans.</p></li>
+            <li><span className="build-name">Doomslog</span><span className="status">in progress</span><p>A Doom-inspired daily journaling app.</p></li>
+            <li><a href="https://github.com/KrishJ4856/piclone" {...external}>piclone <span aria-hidden="true">↗</span></a><span className="status">tinkering now</span></li>
+          </ul>
+        </section>
+        <section className="small-section fun-section" aria-labelledby="fun-title"><h2 id="fun-title">Built for fun</h2><p className="section-note">A few little vibecoded things.</p><ul className="fun-list"><li><a href="https://github.com/KrishJ4856/customdocs" {...external}>CustomDocs ↗</a><span>AI-generated docs</span></li><li><a href="https://github.com/KrishJ4856/omarchy-linga-bhairavi-theme" {...external}>Linga Bhairavi theme ↗</a><span>a little Omarchy customization</span></li><li><a href="https://github.com/KrishJ4856/omarchy-linga-bhairavi-stuti" {...external}>Stuti widget ↗</a><span>for the desktop</span></li></ul></section>
+        <footer><span>Krish Jaiswal <span className="footer-dot">·</span> India</span><nav aria-label="Social links"><a href="https://github.com/KrishJ4856" {...external}>GitHub ↗</a><a href="https://twitter.com/Krish4856" {...external}>X / Twitter ↗</a></nav><span className="footer-flower" aria-hidden="true">✳</span></footer>
       </main>
     </div>
   );
