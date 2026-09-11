@@ -1,0 +1,51 @@
+@import "tailwindcss";
+:root { color-scheme: light; font-synthesis: none; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; }
+.sheet { --accent:#b64b2c; --tint:#efe1d4; background:#f8f6f0; color:#302f2a; min-height:100vh; transition: background .2s; }
+.sheet[data-palette="moss"] { --accent:#59713c; --tint:#e3e8d8; }
+.sheet[data-palette="blue"] { --accent:#476e94; --tint:#e0e7ed; }
+main { max-width:664px; margin:auto; padding:44px 32px 28px; }
+a { color:inherit; text-decoration:none; }
+button { font:inherit; }
+:focus-visible { outline:2px solid var(--accent); outline-offset:6px; border-radius:3px; }
+header { display:flex; justify-content:space-between; align-items:center; }
+.wordmark { font-family:Georgia,serif; font-size:30px; letter-spacing:-2px; font-weight:bold; }
+.wordmark span { color:var(--accent); }
+.color-button { display:flex; align-items:center; gap:8px; background:none; border:0; color:#77756e; padding:10px 0 10px 12px; cursor:pointer; font-size:11px; }
+.color-dot { width:11px; height:11px; background:var(--accent); border-radius:50%; box-shadow:0 0 0 3px var(--tint); transition:background .2s; }
+.color-button:hover .color-dot { transform:scale(1.2); }
+.intro { padding:68px 0 53px; }
+.eyebrow { display:flex; align-items:center; gap:10px; font-family:monospace; letter-spacing:1.6px; font-size:10px; color:#77756c; margin:0 0 22px; }
+.tiny-star { color:var(--accent); font-size:21px; line-height:1; }
+h1 { font-family:Georgia,'Times New Roman',serif; font-size:66px; font-weight:400; letter-spacing:-3.6px; line-height:1.13; margin:0 0 23px; }
+.period { color:var(--accent); }
+.intro-copy { font-size:16px; line-height:1.8; color:#57564f; margin:0; }
+.quiet { font-size:14px; color:#838078; margin:15px 0 0; }
+h2 { font-size:13px; font-weight:600; margin:0; }
+.section-heading { display:flex; justify-content:space-between; align-items:center; padding-bottom:17px; border-bottom:1px solid #ddd9cf; }
+.count { font:10px monospace; color:#938f84; letter-spacing:1px; }
+.project { display:flex; gap:15px; align-items:center; padding:22px 0; border-bottom:1px solid #e5e1d7; transition:padding .2s; }
+.project-mark { display:flex; align-items:center; justify-content:center; flex-shrink:0; width:40px; height:40px; background:var(--tint); border:1px solid #302f2a08; border-radius:10px; color:var(--accent); font-family:Georgia,serif; font-size:20px; }
+.mark-1 { font-size:27px; }.mark-2 { font:15px monospace; }.mark-3 { font-size:24px; }
+.project-info { display:flex; flex:1; flex-direction:column; gap:7px; }
+.project-name { font-size:14px; font-weight:600; }
+.project-note { font-size:12px; line-height:1.5; color:#78756d; }
+.project-kind { color:#8b877d; font:10px monospace; white-space:nowrap; }
+.arrow { font-size:18px; color:#928e82; transition:transform .2s; }
+.project:hover .project-name,.all-work:hover,nav a:hover { color:var(--accent); }
+.project:hover .arrow { transform:translate(2px,-2px); color:var(--accent); }
+.all-work { display:inline-block; font-size:12px; color:#716c61; margin-top:19px; }
+.all-work span { margin-left:7px; }
+.elsewhere { margin:48px 0 51px; }
+.elsewhere p { font-size:13px; color:#78756d; margin:12px 0 19px; }
+nav { display:flex; gap:24px; font-size:12px; }
+nav a { text-decoration:underline; text-decoration-color:#ccc7bb; text-underline-offset:5px; }
+nav span { color:#918b7e; margin-left:4px; }
+footer { border-top:1px solid #ddd9cf; padding-top:20px; display:flex; justify-content:space-between; align-items:center; gap:10px; color:#8b867b; font-size:10px; }
+.footer-dot { margin:0 5px; }.footer-flower { color:var(--accent); font-size:16px; display:inline-block; margin-left:5px; vertical-align:middle; }
+::selection { background:#e6dbc4; color:#302f2a; }
+@media(min-width:1400px) { main { padding-top:60px; }.intro { padding-top:80px; } }
+@media(max-width:600px) { main { padding:27px 24px 25px; }.intro { padding:54px 0 42px; }h1 { font-size:54px; letter-spacing:-2.8px; }.eyebrow { font-size:9px; letter-spacing:1px; }.intro-copy { font-size:15px; }.desktop-break { display:none; }.project-kind { display:none; }.project { gap:12px; }.project-note { max-width:250px; }.project-mark { width:36px; height:36px; }.elsewhere { margin:39px 0; }footer { font-size:9px; } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; }*,*::before,*::after { transition:none!important; } }
