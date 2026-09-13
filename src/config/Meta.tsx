@@ -12,7 +12,8 @@ export const siteConfig = {
   title: 'Krish Jaiswal — Full-stack Developer',
   description:
     'Portfolio of Krish Jaiswal, a full-stack developer building web products, AI experiments, and developer tools.',
-  url: process.env.NEXT_PUBLIC_URL || 'http://localhost:3000',
+  url:
+    process.env.NEXT_PUBLIC_URL || 'https://portfolio-phi-murex-41.vercel.app',
   author: {
     name: about.name,
     twitter: '@Krish4856',
