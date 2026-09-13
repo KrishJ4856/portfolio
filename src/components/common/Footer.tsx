@@ -1,17 +1,32 @@
-import { footerConfig } from '@/config/Footer';
-import React from 'react';
+import Link from 'next/link';
 
-import Container from './Container';
+const footerLinks = [
+  { label: 'GitHub', href: 'https://github.com/KrishJ4856', external: true },
+  { label: 'X', href: 'https://x.com/Krish4856', external: true },
+  { label: 'RSS FEED', href: '/blog/feed.xml' },
+];
 
 export default function Footer() {
   return (
-    <Container className="py-16">
-      <div className="flex flex-col items-center justify-center">
-        <p className="text-secondary text-center text-sm">
-          {footerConfig.text} <b>{footerConfig.developer}</b> <br /> &copy;{' '}
-          {new Date().getFullYear()}. {footerConfig.copyright}
+    <footer className="mx-auto mt-20 max-w-2xl px-4 pb-8">
+      <div className="border-border flex flex-col gap-3 border-t pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <p className="text-muted-foreground text-xs">
+          © {new Date().getFullYear()} Krish Jaiswal. All rights reserved.
         </p>
+        <nav className="flex items-center gap-4 text-xs">
+          {footerLinks.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              target={item.external ? '_blank' : undefined}
+              rel={item.external ? 'noreferrer' : undefined}
+              className="text-secondary hover:text-primary transition-colors"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
       </div>
-    </Container>
+    </footer>
   );
 }

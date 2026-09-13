@@ -78,6 +78,20 @@ export const projects: Project[] = [
     isWorking: true,
   },
   {
+    title: 'Linga Bhairavi Stuti',
+    description:
+      'A minimal QML bar widget for Omarchy Quattro with a compact, interactive Stuti panel and quick access to the official recording.',
+    image: '/project/linga-bhairavi.png',
+    link: 'https://github.com/KrishJ4856/omarchy-linga-bhairavi-stuti',
+    technologies: [{ name: 'GitHub', icon: <Github key="github" /> }],
+    github: 'https://github.com/KrishJ4856/omarchy-linga-bhairavi-stuti',
+    live: 'https://omarchyplugins.com',
+    details: false,
+    projectDetailsPageSlug:
+      'https://github.com/KrishJ4856/omarchy-linga-bhairavi-stuti',
+    isWorking: true,
+  },
+  {
     title: 'Task Manager CLI',
     description:
       'A Node.js command-line task manager with MongoDB persistence and complete create, read, update, and delete commands.',
@@ -110,6 +124,55 @@ export const projects: Project[] = [
     live: 'https://tech-xcel.vercel.app',
     details: true,
     projectDetailsPageSlug: '/projects/techxcel',
+    isWorking: true,
+  },
+  {
+    title: 'Jobs API',
+    description:
+      'A production-style REST API for registering users and securely creating, updating, filtering, and tracking job applications.',
+    image: '/project/task-manager-cli.png',
+    link: 'https://jobsapi-krish4856.up.railway.app/',
+    technologies: [
+      { name: 'Node.js', icon: <NodeJs key="nodejs" /> },
+      { name: 'JavaScript', icon: <JavaScript key="javascript" /> },
+      { name: 'MongoDB', icon: <MongoDB key="mongodb" /> },
+    ],
+    github: 'https://github.com/KrishJ4856/JobsAPI',
+    live: 'https://jobsapi-krish4856.up.railway.app/',
+    details: false,
+    projectDetailsPageSlug: 'https://github.com/KrishJ4856/JobsAPI',
+    isWorking: true,
+  },
+  {
+    title: 'Kwik File Create',
+    description:
+      'A small command-line utility for creating and deleting batches of files quickly from the terminal.',
+    image: '/project/task-manager-cli.png',
+    link: 'https://github.com/KrishJ4856/kwik-file-create',
+    technologies: [
+      { name: 'Node.js', icon: <NodeJs key="nodejs" /> },
+      { name: 'JavaScript', icon: <JavaScript key="javascript" /> },
+    ],
+    github: 'https://github.com/KrishJ4856/kwik-file-create',
+    live: 'https://github.com/KrishJ4856/kwik-file-create',
+    details: false,
+    projectDetailsPageSlug: 'https://github.com/KrishJ4856/kwik-file-create',
+    isWorking: true,
+  },
+  {
+    title: 'QR Code Generator',
+    description:
+      'A focused browser app for turning text and URLs into downloadable QR codes.',
+    image: '/project/techxcel.png',
+    link: 'https://qr-generator-krish4856.netlify.app/',
+    technologies: [
+      { name: 'JavaScript', icon: <JavaScript key="javascript" /> },
+      { name: 'Tailwind CSS', icon: <TailwindCss key="tailwind" /> },
+    ],
+    github: 'https://github.com/KrishJ4856/QR-Code-Generator',
+    live: 'https://qr-generator-krish4856.netlify.app/',
+    details: false,
+    projectDetailsPageSlug: 'https://github.com/KrishJ4856/QR-Code-Generator',
     isWorking: true,
   },
 ];

@@ -1,6 +1,5 @@
 import Footer from '@/components/common/Footer';
-import Navbar from '@/components/common/Navbar';
-import OnekoCat from '@/components/common/OnekoCat';
+import SiteHeader from '@/components/common/SiteHeader';
 import { ThemeProvider } from '@/components/common/ThemeProviders';
 import { generateMetadata as getMetadata } from '@/config/Meta';
 import ReactLenis from 'lenis/react';
@@ -21,14 +20,13 @@ export default function RootLayout({
         <body className="font-hanken-grotesk antialiased">
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="light"
             enableSystem
             disableTransitionOnChange
           >
             <ReactLenis root>
-              <Navbar />
+              <SiteHeader />
               {children}
-              <OnekoCat />
               <Footer />
             </ReactLenis>
           </ThemeProvider>
