@@ -12,7 +12,7 @@ const articleCatalog: Article[] = [
   {
     title: 'How to Build a Task Manager CLI Tool with Node.js',
     description:
-      'Build a complete command-line task manager with create, view, update, and delete workflows.',
+      'Build a CLI based task manager application with create, view, update, and delete workflows.',
     publication: 'freeCodeCamp',
     href: 'https://www.freecodecamp.org/news/nodejs-tutorial-build-a-task-manager-cli-tool/',
     date: '2023-08-29',
@@ -21,21 +21,11 @@ const articleCatalog: Article[] = [
   {
     title: 'How to Get Started with Node.js',
     description:
-      'A beginner-friendly handbook covering what Node.js is, how it works, and what you can build with it.',
+      'A comprehensive yet beginner-friendly handbook to help beginners get started with Node.js.',
     publication: 'freeCodeCamp',
     href: 'https://www.freecodecamp.org/news/get-started-with-nodejs/',
     date: '2023-05-02',
     canonicalId: 'nodejs-introduction',
-  },
-  {
-    title: "DevBytes — What's Happening in Tech in 64 Words",
-    description:
-      'A compact experiment for catching up with technology news without the noise.',
-    publication: 'Hashnode',
-    href: 'https://krishwebdev.hashnode.dev/devbytes-know-whats-happening-in-the-tech-industry-in-just-64-words',
-    date: '2023-04-20',
-    readTime: '5 min read',
-    canonicalId: 'devbytes-tech-news',
   },
   {
     title: 'Learn Linux System Administration',
@@ -46,16 +36,6 @@ const articleCatalog: Article[] = [
     date: '2023-03-31',
     readTime: '20 min read',
     canonicalId: 'linux-system-administration',
-  },
-  {
-    title: 'NodeJS Notes — My Learnings',
-    description:
-      'An introduction to Node.js, core modules, HTTP servers, and server-side JavaScript.',
-    publication: 'Hashnode',
-    href: 'https://krishwebdev.hashnode.dev/nodejs-notes-my-learnings',
-    date: '2023-03-29',
-    readTime: '16 min read',
-    canonicalId: 'nodejs-introduction',
   },
   {
     title: 'Learn Standard Linux Streams and File Manipulation',

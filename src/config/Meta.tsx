@@ -9,7 +9,7 @@ export interface PageMeta {
 
 export const siteConfig = {
   name: heroConfig.name,
-  title: 'Krish Jaiswal — Full-stack Developer',
+  title: 'itskrish',
   description:
     'Portfolio of Krish Jaiswal, a full-stack developer building web products, AI experiments, and developer tools.',
   url: process.env.NEXT_PUBLIC_URL || 'https://itskrish.vercel.app',
@@ -32,7 +32,7 @@ export const siteConfig = {
 
 export const pageMetadata: Record<string, PageMeta> = {
   '/': {
-    title: 'Krish Jaiswal — Full-stack Developer',
+    title: 'Krish Jaiswal',
     description: siteConfig.description,
   },
   '/projects': {
@@ -67,12 +67,21 @@ export function generateMetadata(pathname: string) {
       title: pageMeta.title,
       description: pageMeta.description,
       siteName: siteConfig.title,
+      images: [
+        {
+          url: '/social-preview.jpg',
+          width: 1200,
+          height: 630,
+          alt: 'Krish Jaiswal — Developer, Writer, and Builder',
+        },
+      ],
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
       title: pageMeta.title,
       description: pageMeta.description,
       creator: siteConfig.author.twitter,
+      images: ['/social-preview.jpg'],
     },
     robots: {
       index: true,

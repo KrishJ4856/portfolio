@@ -1,3 +1,4 @@
+import AstraStarfield from '@/components/common/AstraStarfield';
 import Footer from '@/components/common/Footer';
 import SiteHeader from '@/components/common/SiteHeader';
 import { ThemeProvider } from '@/components/common/ThemeProviders';
@@ -24,6 +25,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <AstraStarfield />
             <ReactLenis root>
               <SiteHeader />
               {children}
